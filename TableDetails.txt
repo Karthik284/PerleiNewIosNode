@@ -1,0 +1,33 @@
+User : Payroll
+PW : log
+..............................................................................
+Leave Entry
+Table name : mleavemas & mleavedet
+..............................................................................
+Total EL 
+
+select opeldays from payroll.stfopmas a,payroll.stfopdet b where 
+A.STFOPMASID=B.STFOPMASID 
+and finyr=to_char( :docdate,'yyyy') and empid=:idcardno
+...........................................................................
+EL Taken
+
+select sum(ldays)ss from payroll.stfleavemas a,payroll.stfleavedet b where 
+A.STFLEAVEMASID=b.STFLEAVEMASID
+and lyear= to_char( :docdate,'yyyy') and empid=:idcardno and type='EL'
+.............................................................................
+Employee details
+
+select idcardno,empname,panno,dob,doj,UNDERHEADEMPID from empma where type = 'STAFF'
+-----------------------------------------------------------------------------
+Shift Details
+
+select idcardno,indate,intime,outdate,outtime,shiftcnt from hdattaall where type = 'STAFF'
+.................................................................................
+Permission 
+Table name : mpermas
+.................................................................................
+Onduty 
+
+Table name : MONDUTYMAS
+..................................................................................
