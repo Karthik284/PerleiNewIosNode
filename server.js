@@ -15,14 +15,14 @@ app.use(bodyParser.json());
 
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./perlei-mobilenotification-firebase-adminsdk-hq11f-7e503f7bd0.json");
+// var serviceAccount = require("./perlei-mobilenotification-firebase-adminsdk-hq11f-7e503f7bd0.json");
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    projectId: 'perlei-mobilenotification'
-});
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount),
+//     projectId: 'perlei-mobilenotification'
+// });
 
-const messaging = admin.messaging();
+// const messaging = admin.messaging();
 
 
 app.listen(port, () => {
